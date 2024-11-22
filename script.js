@@ -7,14 +7,22 @@ document.getElementById('imageUpload').addEventListener('change', function(event
         const reader = new FileReader();
         reader.onload = function(e) {
             originalImage = new Image(); // 创建一个新的图片对象
-            originalImage.onload = function() {
-                const canvas = document.getElementById('imagePreview');
-                const ctx = canvas.getContext('2d');
-                canvas.width = originalImage.width;
-                canvas.height = originalImage.height;
-                ctx.drawImage(originalImage, 0, 0, originalImage.width, originalImage.height);
-                applyStyle('original'); // 初始应用原始风格
-            };
+           originalImage.onload = function() {
+    const canvas = document.getElementById('imagePreview');
+    const ctx = canvas.getContext('2d');
+    
+    // 设置画布尺寸以适应图片大小
+    canvas.width = originalImage.width;
+    canvas.height = originalImage.height;
+    
+    // 清除画布
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // 绘制图片
+    ctx.drawImage(originalImage, 0, 0, originalImage.width, originalImage.height);
+    applyStyle('original'); // 初始应用原始风格
+};
+
             originalImage.src = e.target.result;
         };
         reader.readAsDataURL(file);
