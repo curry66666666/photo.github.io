@@ -111,7 +111,7 @@ options.forEach(option => {
 
 // 点击选项外的区域关闭下拉菜单
 document.addEventListener('click', (e) => {
-    if (e.target !== selectedText && !optionsList.contains(e.target) && !selectContainer.contains(e.target)) {
+    if (!selectContainer.contains(e.target)) {
         optionsList.style.display = 'none';
     }
 });
