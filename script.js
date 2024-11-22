@@ -8,13 +8,20 @@ document.getElementById('imageUpload').addEventListener('change', function(event
         reader.onload = function(e) {
             originalImage = new Image(); // 创建一个新的图片对象
            originalImage.onload = function() {
-    const canvas = document.getElementById('imagePreview');
-    const ctx = canvas.getContext('2d');
-    
-    // 设置画布尺寸以适应图片大小
-    canvas.width = originalImage.width;
-    canvas.height = originalImage.height;
-    
+            const canvas = document.getElementById('imagePreview');
+            const ctx = canvas.getContext('2d');
+            
+            // 设置画布尺寸以适应图片大小并保持宽高比
+            canvas.width = originalImage.width;
+            canvas.height = originalImage.height;
+            
+            // 计算缩放比例
+            const scale = Math.min(canvas.clientWidth / originalImage.width, canvas.clientHeight / originalImage.height);
+            
+            // 应用缩放比例并保持居中
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(originalImage, (canvas.width - originalImage.width * scale) / 2, (canvas.height - originalImage.height * scale) / 2, originalImage.width * scale, originalImage.height * scale);
+            
     // 清除画布
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
@@ -108,4 +115,3 @@ document.addEventListener('click', (e) => {
         optionsList.style.display = 'none';
     }
 });
-
