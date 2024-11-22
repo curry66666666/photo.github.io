@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片风格切换器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>图片风格切换器</h1>
+        <label class="custom-file-upload" for="imageUpload">
+            选择图片
+        </label>
+        <input type="file" id="imageUpload" accept="image/*" class="glassmorphic" style="display: none;">
+        
+        <div class="custom-select" id="styleSelectContainer">
+            <div class="custom-select-header" id="selectedStyle">
+                <span id="selectedTextStyle">风格</span><span class="arrow-down"></span>
+            </div>
+            <div class="custom-select-options">
+                <div class="custom-select-option" data-value="original">原始</div>
+                <div class="custom-select-option" data-value="ccd">CCD</div>
+                <div class="custom-select-option" data-value="leica">徕卡</div>
+                <div class="custom-select-option" data-value="aesthetic">唯美</div>
+                <div class="custom-select-option" data-value="retro">复古</div>
+                <div class="custom-select-option" data-value="blackAndWhite">黑白</div>
+                <div class="custom-select-option" data-value="vintage">怀旧</div>
+                <div class="custom-select-option" data-value="coldTone">冷色调</div>
+                <div class="custom-select-option" data-value="warmTone">暖色调</div>
+                <div class="custom-select-option" data-value="hdr">HDR</div>
+            </div>
+        </div>
+        <canvas id="imagePreview" class="preview"></canvas>
+        <div class="button-container">
+            <button id="saveButton" class="glassmorphic">保存图片</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

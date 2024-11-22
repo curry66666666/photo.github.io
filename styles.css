@@ -1,0 +1,206 @@
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(56, 89, 141, 0.2);
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    color: #fff;
+}
+h1 {
+    margin-bottom: 20px;
+    color: #6e6cde;
+}
+
+.preview {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.glassmorphic {
+    background: rgba(63, 148, 205, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(184, 237, 198, 0.5);
+    border-radius: 10px;
+    color: #93cee7;
+    padding: 10px 20px;
+    margin: 5px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.glassmorphic:hover {
+    transform: translateY(-2px);
+}
+
+#saveButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+   
+   
+}
+
+#saveButton:hover {
+    background: linear-gradient(135deg, #5469d4, #653e8c);
+}
+
+.custom-file-upload {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    font-size: 16px;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.custom-file-upload:active {
+    transform: translateY(-2px);
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    color: #80a2d2;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.custom-select-header {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+}
+
+.arrow-down {
+    margin-left: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+}
+
+/* 自定义下拉菜单选项容器样式 */
+#styleSelectContainer .custom-select-options {
+    display: none;
+    z-index: 1050 !important;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    
+}
+
+/* 自定义下拉菜单选项样式 */
+#styleSelectContainer.custom-select-options.custom-select-option {
+    position: relative;
+    z-index: 1051;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    cursor: pointer;
+   
+}
+
+.custom-select-option:hover {
+    background-color: #0000ff;
+    color: #fff;
+}
+
+
+/* 选择文件模块的样式 */
+input[type="file"] {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    margin: 5px 0;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+    color: hsla(0, 50%, 95%, 0);
+}
+
+input[type="file"]:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+input[type="file"]:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+/* 自定义文件上传按钮的样式 */
+.custom-file-upload {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    color: #312d2d;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    font-size: 16px;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.custom-file-upload:active {
+    transform: translateY(-2px);
+}
